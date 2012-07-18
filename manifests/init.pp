@@ -59,6 +59,7 @@ class bind (
     }
 
     file { '/etc/bind/named.conf.options':
+        alias       => 'bind_options'
         mode        => '0644',
         owner       => 'root',
         group       => 'root',
