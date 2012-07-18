@@ -24,7 +24,7 @@
 #
 # [* config_source *]
 #   Specify a configuration source for the configuration. If this
-#   is specified it is used instead of a template-generated configuration
+#   is specified it is used instead of a emplate-generated configuration
 #
 # [* config_template *]
 #   Override the default choice for the configuration template
@@ -60,7 +60,7 @@ class bind (
         mode        => '0644',
         owner       => 'root',
         group       => 'root',
-        template    => template('bind/named.conf.options.erb'),
+        content     => template('bind/named.conf.options.erb'),
         notify      => Service['bind']
     }
 
