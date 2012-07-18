@@ -1,0 +1,9 @@
+bind_ensure: true
+bind_ensure_running: true
+bind_ensure_enabled: true
+
+#bind_config_source: puppet:///files/__module__.conf
+#bind_config_template: __module__.conf.erb
+#bind_disabled_hosts:
+#  - testhost1
+

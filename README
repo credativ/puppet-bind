@@ -1,0 +1,13 @@
+This is a template for a module in the style of most credativ modules.
+It uses parameterized classes and params_lookup to support multiple backends
+for parameters (e.g. included params file and hiera).
+
+USAGE:
+======
+- Copy to a new folder called as the modulename you intend to use.
+- Replace __module__ in manifests/*.pp and examples/* with the intended
+  module name.
+  Example:
+  sed -i 's/__module__/your_intended_modulename/g' manifests/*.pp examples/*
+- Edit and add files as you need
+- Replace this README with your own README
