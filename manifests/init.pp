@@ -44,7 +44,8 @@ class bind (
 
     ) inherits bind::params {
 
-    Package['bind'] -> File['bind_options'] -> Service['bind']
+    Package['bind9'] -> File['/etc/bind/named.conf.options'] 
+        -> Service['bind9']
 
     package { 'bind9':
         ensure => $ensure,
@@ -56,17 +57,15 @@ class bind (
         enable      => $ensure_enabled,
         hasrestart  => true,
         hasstatus   => true,
-        alias       => 'bind',
-        require     => Package['bind']
+        require     => Package['bind9']
     }
 
     file { '/etc/bind/named.conf.options':
-        alias       => 'bind_options',
         mode        => '0644',
         owner       => 'root',
         group       => 'root',
         content     => template('bind/named.conf.options.erb'),
-        notify      => Service['bind']
+        notify      => Service['bind9']
     }
 
     # Disable service on this host, if hostname is in disabled_hosts
@@ -74,16 +73,6 @@ class bind (
         Service <| title == 'bind' |> {
             ensure  => 'stopped',
             enabled => false,
-        }
-    }
-
-    if $config_source {
-        File <| tag == 'bind_config' |> {
-            source  => $config_source
-        }
-    } elsif $config_template {
-        File <| tag == 'bind_config' |> {
-            template => $config_template
         }
     }
 }
