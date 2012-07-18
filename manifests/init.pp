@@ -44,6 +44,8 @@ class bind (
 
     ) inherits bind::params {
 
+    Package['bind'] -> File['bind_options'] -> Service['bind']
+
     package { 'bind9':
         ensure => $ensure,
         alias  => 'bind'
