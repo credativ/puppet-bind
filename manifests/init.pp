@@ -45,7 +45,8 @@ class bind (
     ) inherits bind::params {
 
     package { 'bind9':
-        ensure => $ensure
+        ensure => $ensure,
+        alias  => 'bind'
     }
 
     service { 'bind9':
@@ -53,6 +54,7 @@ class bind (
         enable      => $ensure_enabled,
         hasrestart  => true,
         hasstatus   => true,
+        alias       => 'bind',
         require     => Package['bind']
     }
 
