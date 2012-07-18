@@ -23,10 +23,7 @@ options {
 <% end %>
 auth-nxdomain no; # conform to RFC1035
 <% if listener -%>
-    listen-on { <%= bind_bindaddress %>; };
-    notify-source <%= bind_bindaddress %>;
-    transfer-source <%= bind_bindaddress %>;
-    query-source address <%= bind_bindaddress %>;
+    listen-on { <%= listener %>; };
 <% end -%>
 
 // listen-on-v6 { any; };
