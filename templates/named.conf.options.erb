@@ -22,7 +22,7 @@ options {
     // };
 <% end %>
 auth-nxdomain no; # conform to RFC1035
-<% if listener -%>
+<% if listener != undef -%>
     listen-on { <%= listener %>; };
 <% end -%>
 
