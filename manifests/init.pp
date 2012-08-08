@@ -9,31 +9,30 @@
 #
 # == Parameters:
 #
-# [* ensure *]
+# [*ensure*]
 #   What state to ensure for the package. Accepts the same values
 #   as the parameter of the same name for a package type.
 #   Default: present
 #   
-# [* ensure_running *]
+# [*ensure_running*]
 #   Weither to ensure running bind or not.
 #   Default: running
 #
-# [* ensure_enabled *]
+# [*ensure_enabled*]
 #   Weither to ensure that bind is started on boot or not.
 #   Default: true
 #
-# [* config_source *]
+# [*config_source*]
 #   Specify a configuration source for the configuration. If this
 #   is specified it is used instead of a emplate-generated configuration
 #
-# [* config_template *]
+# [*config_template*]
 #   Override the default choice for the configuration template
 #
-# [* disabled_hosts *]
+# [*disabled_hosts*]
 #   A list of hosts whose bind will be disabled, if their
 #   hostname matches a name in the list.
 #
-
 class bind (
     $ensure             = params_lookup('ensure'),
     $ensure_running     = params_lookup('ensure_running'),
