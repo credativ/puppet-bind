@@ -1,0 +1,6 @@
+puppet-module-bind  for Debian
+---------------------------------------
+
+This puppet module has been packaged with dh-make-puppet.
+
+ -- Patrick Schoenfeld <patrick.schoenfeld@credativ.de>, Wed, 25 Jun 2014 10:57:33 +0200

@@ -1,0 +1,5 @@
+puppet-module-bind  (1.0.1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Patrick Schoenfeld <patrick.schoenfeld@credativ.de>  Wed, 25 Jun 2014 10:57:33 +0200

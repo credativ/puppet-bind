@@ -1,0 +1,10 @@
+manifests   usr/share/puppet/modules.available/bind 
+templates   usr/share/puppet/modules.available/bind 
+files       usr/share/puppet/modules.available/bind 
+spec        usr/share/puppet/modules.available/bind 
+Rakefile    usr/share/puppet/modules.available/bind 
+Gemfile     usr/share/puppet/modules.available/bind 
+LICENSE     usr/share/doc/puppet-module-bind 
+README*     usr/share/doc/puppet-module-bind 
+examples/*  usr/share/doc/puppet-module-bind /examples
+
