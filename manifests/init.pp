@@ -47,9 +47,6 @@ class bind (
 
     ) inherits bind::params {
 
-    Package['bind9'] -> File['/etc/bind/named.conf.options'] 
-        -> Service['bind9']
-
     package { 'bind9':
         ensure => $ensure,
         alias  => 'bind'
@@ -69,6 +66,7 @@ class bind (
             owner       => 'root',
             group       => 'root',
             content     => template('bind/named.conf.options.erb'),
+            require     => Package['bind9'],
             notify      => Service['bind9']
         }
     }
