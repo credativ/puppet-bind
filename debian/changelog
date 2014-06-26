@@ -1,3 +1,9 @@
+puppet-module-bind (1.0.3) unstable; urgency=medium
+
+  * Make depends work, even without managing config
+
+ -- Patrick Schoenfeld <patrick.schoenfeld@credativ.de>  Thu, 26 Jun 2014 11:50:06 +0200
+
 puppet-module-bind (1.0.2) unstable; urgency=medium
 
   * Add new parameter 'manage_config'
