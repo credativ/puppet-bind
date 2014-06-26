@@ -5,5 +5,6 @@ class bind::params {
     $disabled_hosts = []
     $listener       = undef
     $forwarders     = undef
+    $manage_config  = true
 }
 

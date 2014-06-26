@@ -1,3 +1,9 @@
+puppet-module-bind (1.0.2) unstable; urgency=medium
+
+  * Add new parameter 'manage_config'
+
+ -- Patrick Schoenfeld <patrick.schoenfeld@credativ.de>  Thu, 26 Jun 2014 11:34:46 +0200
+
 puppet-module-bind (1.0.1) unstable; urgency=low
 
   * Initial release.

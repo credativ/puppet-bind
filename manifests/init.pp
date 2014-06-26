@@ -21,6 +21,9 @@
 # [*ensure_enabled*]
 #   Weither to ensure that bind is started on boot or not.
 #   Default: true
+#   
+# [*manage_config*]
+#   Weither to manage bind configuration files at all or not.
 #
 # [*config_source*]
 #   Specify a configuration source for the configuration. If this
@@ -37,6 +40,7 @@ class bind (
     $ensure             = params_lookup('ensure'),
     $ensure_running     = params_lookup('ensure_running'),
     $ensure_enabled     = params_lookup('ensure_enabled'),
+    $manage_config      = params_lookup('managed_config'),
     $disabled_hosts     = params_lookup('disabled_hosts'),
     $listener           = params_lookup('listener'),
     $forwarders         = params_lookup('forwarders'),
@@ -59,12 +63,14 @@ class bind (
         require     => Package['bind9']
     }
 
-    file { '/etc/bind/named.conf.options':
-        mode        => '0644',
-        owner       => 'root',
-        group       => 'root',
-        content     => template('bind/named.conf.options.erb'),
-        notify      => Service['bind9']
+    if $manage_config {
+        file { '/etc/bind/named.conf.options':
+            mode        => '0644',
+            owner       => 'root',
+            group       => 'root',
+            content     => template('bind/named.conf.options.erb'),
+            notify      => Service['bind9']
+        }
     }
 
     # Disable service on this host, if hostname is in disabled_hosts
