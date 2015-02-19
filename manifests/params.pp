@@ -6,5 +6,6 @@ class bind::params {
     $listener       = undef
     $forwarders     = undef
     $manage_config  = true
+    $forward_only   = false
 }
 

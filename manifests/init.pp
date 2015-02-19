@@ -44,6 +44,7 @@ class bind (
     $disabled_hosts     = params_lookup('disabled_hosts'),
     $listener           = params_lookup('listener'),
     $forwarders         = params_lookup('forwarders'),
+    $forward_only       = params_lookup('forward_only'),
 
     ) inherits bind::params {
 
