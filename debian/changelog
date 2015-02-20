@@ -1,3 +1,10 @@
+puppet-module-bind (1.0.5) unstable; urgency=medium
+
+  [Damian Lukowski]
+  * Add option to set forward_only when acting as forwarding dns
+
+ -- Patrick Schoenfeld <patrick.schoenfeld@credativ.de>  Fri, 20 Feb 2015 16:43:39 +0100
+
 puppet-module-bind (1.0.4) unstable; urgency=medium
 
   * add a managed by puppet hint
