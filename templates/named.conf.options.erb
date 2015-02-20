@@ -12,7 +12,9 @@ options {
     // the all-0's placeholder.
 
 <% if forwarders -%>
-    <% if forward_only %>forward only;<% end -%>
+<% if @forward_only -%>
+    forward only;
+<% end -%>
     forwarders {
 <% forwarders.each do |forwarder| -%>
         <%= forwarder %>;
