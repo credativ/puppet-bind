@@ -44,9 +44,13 @@ class bind (
     $disabled_hosts     = params_lookup('disabled_hosts'),
     $listener           = params_lookup('listener'),
     $forwarders         = params_lookup('forwarders'),
-    $forward_only       = params_lookup('forward_only'),
+    $forward            = params_lookup('forward'),
 
     ) inherits bind::params {
+
+    if (!($forward in ['only', 'first', '', undef])) {
+        fail("bind::forward not only or first, but $forward")
+    }
 
     package { 'bind9':
         ensure => $ensure,
