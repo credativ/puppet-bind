@@ -1,3 +1,9 @@
+puppet-module-bind (1.0.6) credativ; urgency=medium
+
+  * Replace forward_only with fordward.
+
+ -- Bastian Blank <bastian.blank@credativ.de>  Mon, 02 Mar 2015 16:23:33 +0100
+
 puppet-module-bind (1.0.5) unstable; urgency=medium
 
   [Damian Lukowski]
