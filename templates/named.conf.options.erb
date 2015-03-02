@@ -11,10 +11,10 @@ options {
     // Uncomment the following block, and insert the addresses replacing
     // the all-0's placeholder.
 
-<% if forwarders -%>
-<% if @forward_only -%>
-    forward only;
+<% if forward -%>
+    forward <%= forward %>;
 <% end -%>
+<% if forwarders -%>
     forwarders {
 <% forwarders.each do |forwarder| -%>
         <%= forwarder %>;
