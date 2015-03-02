@@ -1,0 +1,4 @@
+fixtures:
+  symlinks:
+    bind: "#{source_dir}"
+    example42lib: "#{source_dir}/../puppet-example42lib"
