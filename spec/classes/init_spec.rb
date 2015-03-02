@@ -8,6 +8,14 @@ describe 'bind' do
     }
   end
 
+  context "With valid forward" do
+    let (:params) { { :forward => 'only' } }
+
+    it {
+      should contain_class('bind')
+    }
+  end
+
   context "With invalid forward" do
     let (:params) { { :forward => 'invalid' } }
 
