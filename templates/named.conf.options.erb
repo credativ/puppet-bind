@@ -11,7 +11,7 @@ options {
     // Uncomment the following block, and insert the addresses replacing
     // the all-0's placeholder.
 
-<% if forward -%>
+<% if forward and forward != '' -%>
     forward <%= forward %>;
 <% end -%>
 <% if forwarders -%>
