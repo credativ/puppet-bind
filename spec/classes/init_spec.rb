@@ -1,5 +1,4 @@
-require 'rubygems'
-require 'puppetlabs_spec_helper/module_spec_helper'
+require 'spec_helper'
 
 describe 'bind' do
   context "With default facts" do
@@ -20,7 +19,7 @@ describe 'bind' do
     let (:params) { { :forward => 'invalid' } }
 
     it {
-      expect { should compile }.to raise_error(Puppet::Error, /invalid/)
+      expect { is_expected.to compile }.to raise_error(/.*invalid.*/)
     }
   end
 end
