@@ -1,3 +1,4 @@
+# = Class: bind::params
 class bind::params {
     $ensure         = 'present'
     $ensure_running = true

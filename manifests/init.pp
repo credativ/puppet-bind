@@ -49,7 +49,7 @@ class bind (
     ) inherits bind::params {
 
     if (!($forward in ['only', 'first', '', undef])) {
-        fail("bind::forward contains invalid value '$forward', needs to be either 'only' or 'first'")
+        fail("bind::forward contains invalid value '${forward}', needs to be either 'only' or 'first'")
     }
 
     package { 'bind9':
@@ -58,21 +58,21 @@ class bind (
     }
 
     service { 'bind9':
-        ensure      => $ensure_running,
-        enable      => $ensure_enabled,
-        hasrestart  => true,
-        hasstatus   => true,
-        require     => Package['bind9']
+        ensure     => $ensure_running,
+        enable     => $ensure_enabled,
+        hasrestart => true,
+        hasstatus  => true,
+        require    => Package['bind9']
     }
 
     if $manage_config {
         file { '/etc/bind/named.conf.options':
-            mode        => '0644',
-            owner       => 'root',
-            group       => 'root',
-            content     => template('bind/named.conf.options.erb'),
-            require     => Package['bind9'],
-            notify      => Service['bind9']
+            mode    => '0644',
+            owner   => 'root',
+            group   => 'root',
+            content => template('bind/named.conf.options.erb'),
+            require => Package['bind9'],
+            notify  => Service['bind9']
         }
     }
 
