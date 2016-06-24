@@ -1,4 +1,10 @@
 fixtures:
-  symlinks:
-    bind: "#{source_dir}"
-    example42lib: "#{source_dir}/../puppet-example42lib"
+    symlinks:
+        bind: "../../../"
+    forge_modules:
+        stdlib:
+            repo: 'puppetlabs/stdlib'
+            ref: '4.2.1'
+    repositories:
+        example42lib:
+            repo: 'https://github.com/credativ/puppet-example42lib'

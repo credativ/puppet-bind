@@ -13,7 +13,7 @@
 #   What state to ensure for the package. Accepts the same values
 #   as the parameter of the same name for a package type.
 #   Default: present
-#   
+#
 # [*ensure_running*]
 #   Weither to ensure running bind or not.
 #   Default: running
@@ -21,7 +21,7 @@
 # [*ensure_enabled*]
 #   Weither to ensure that bind is started on boot or not.
 #   Default: true
-#   
+#
 # [*manage_config*]
 #   Weither to manage bind configuration files at all or not.
 #
@@ -49,7 +49,7 @@ class bind (
     ) inherits bind::params {
 
     if (!($forward in ['only', 'first', '', undef])) {
-        fail("bind::forward not only or first, but $forward")
+        fail("bind::forward contains invalid value '${forward}', needs to be either 'only' or 'first'")
     }
 
     package { 'bind9':
@@ -58,21 +58,21 @@ class bind (
     }
 
     service { 'bind9':
-        ensure      => $ensure_running,
-        enable      => $ensure_enabled,
-        hasrestart  => true,
-        hasstatus   => true,
-        require     => Package['bind9']
+        ensure     => $ensure_running,
+        enable     => $ensure_enabled,
+        hasrestart => true,
+        hasstatus  => true,
+        require    => Package['bind9']
     }
 
     if $manage_config {
         file { '/etc/bind/named.conf.options':
-            mode        => '0644',
-            owner       => 'root',
-            group       => 'root',
-            content     => template('bind/named.conf.options.erb'),
-            require     => Package['bind9'],
-            notify      => Service['bind9']
+            mode    => '0644',
+            owner   => 'root',
+            group   => 'root',
+            content => template('bind/named.conf.options.erb'),
+            require => Package['bind9'],
+            notify  => Service['bind9']
         }
     }
 
