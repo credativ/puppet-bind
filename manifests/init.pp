@@ -40,7 +40,7 @@ class bind (
     $ensure             = params_lookup('ensure'),
     $ensure_running     = params_lookup('ensure_running'),
     $ensure_enabled     = params_lookup('ensure_enabled'),
-    $manage_config      = params_lookup('managed_config'),
+    $manage_config      = params_lookup('manage_config'),
     $disabled_hosts     = params_lookup('disabled_hosts'),
     $listener           = params_lookup('listener'),
     $forwarders         = params_lookup('forwarders'),
