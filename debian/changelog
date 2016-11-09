@@ -1,4 +1,4 @@
-puppet-module-bind (1.0.7) UNRELEASED; urgency=medium
+puppet-module-bind (1.0.7) unstable; urgency=medium
 
   * Improve error message for wrong values of bind::forward
   * Fix spec test: fail does not raise a certain type
@@ -6,7 +6,7 @@ puppet-module-bind (1.0.7) UNRELEASED; urgency=medium
   * Add missing .rspec file
   * Some fixes for puppet-lint warnings
 
- -- Patrick Schoenfeld <patrick.schoenfeld@credativ.de>  Fri, 24 Jun 2016 15:03:38 +0000
+ -- Patrick Schoenfeld <patrick.schoenfeld@credativ.de>  Wed, 09 Nov 2016 12:49:33 +0000
 
 puppet-module-bind (1.0.6) credativ; urgency=medium
 
