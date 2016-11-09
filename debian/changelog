@@ -1,3 +1,10 @@
+puppet-module-bind (2.0.0) unstable; urgency=medium
+
+  [ Bastian Blank ]
+  * Fix name of manage_config parameter
+
+ -- Maximilian Gaß <maximilian.gass@credativ.de>  Wed, 09 Nov 2016 12:51:38 +0000
+
 puppet-module-bind (1.0.7) unstable; urgency=medium
 
   * Improve error message for wrong values of bind::forward
