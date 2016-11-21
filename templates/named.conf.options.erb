@@ -11,10 +11,10 @@ options {
     // Uncomment the following block, and insert the addresses replacing
     // the all-0's placeholder.
 
-<% if @forward -%>
+<% if ['only', 'first'].include?(@forward) -%>
     forward <%= @forward %>;
 <% end -%>
-<% if @forwarders -%>
+<% if @forwarders and @forwarders.respond_to?('each') -%>
     forwarders {
 <% @forwarders.each do |forwarder| -%>
         <%= forwarder %>;
@@ -26,7 +26,7 @@ options {
     // };
 <% end %>
     auth-nxdomain no; # conform to RFC1035
-<% if @listener -%>
+<% if @listener and @listener.respond_to?('each') -%>
     listen-on {
 <% @listener.each do |ip| -%>
         <%= ip %>;
