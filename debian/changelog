@@ -1,3 +1,10 @@
+puppet-module-bind (2.0.1) unstable; urgency=medium
+
+  * Add @ sigil for external variables.
+  * Check for each() support in ruby template.
+
+ -- Damian Lukowski <damian.lukowski@credativ.de>  Fri, 02 Dec 2016 13:35:56 +0100
+
 puppet-module-bind (2.0.0) unstable; urgency=medium
 
   [ Bastian Blank ]
